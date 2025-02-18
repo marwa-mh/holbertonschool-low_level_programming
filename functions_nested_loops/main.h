@@ -1,6 +1,6 @@
-#ifndef _PUTCHAR_H
-#define _PUTCHAR_H
+#ifndef MAIN_H
+#define MAIN_H
 
-void printPutChar(void);
+
 
 #endif
