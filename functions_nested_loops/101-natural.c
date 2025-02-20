@@ -7,9 +7,9 @@
  */
 int main(void)
 {
-	int sum;
+	int sum = 0;
 	int num;
-	int i;
+	int i = 0;
 
 	num = 1024;
 	while (i < num)
@@ -18,6 +18,6 @@ int main(void)
 			sum = sum + i;
 		i++;
 	}
-	printf("%d", sum);
+	printf("%d\n", sum);
 	return (0);
 }
