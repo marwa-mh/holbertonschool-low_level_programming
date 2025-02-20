@@ -7,18 +7,18 @@
  */
 int main(void)
 {
-	int tmp = 0;
-	int num = 2;
-	int prev_num = 1;
-	int counter = 2;
+	long int tmp = 0;
+	long int num = 2;
+	long int prev_num = 1;
+	long int counter = 3;
 
-	printf("%d, %d, ", prev_num, num);
+	printf("%ld, %ld, ", prev_num, num);
 	while (counter <= 50)
 	{
 		tmp = num;
 		num = num + prev_num;
 		prev_num = tmp;
-		printf("%d", num);
+		printf("%ld", num);
 		if (counter != 50)
 			printf(", ");
 		counter++;
