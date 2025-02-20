@@ -12,8 +12,7 @@ int main(void)
 	long int prev_num = 1;
 	long int max_value = 4000000;
 	long int even_sum = num;
-	
-	
+
 	while (num <= max_value)
 	{
 		tmp = num;
