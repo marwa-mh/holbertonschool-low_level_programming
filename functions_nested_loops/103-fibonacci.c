@@ -11,8 +11,9 @@ int main(void)
 	long int num = 2;
 	long int prev_num = 1;
 	long int max_value = 4000000;
-
-	printf("%ld, %ld, ", prev_num, num);
+	long int even_sum = num;
+	
+	
 	while (num <= max_value)
 	{
 		tmp = num;
@@ -20,10 +21,9 @@ int main(void)
 		if (num > max_value)
 			break;
 		prev_num = tmp;
-		printf("%ld", num);
-		if (num + prev_num < max_value)
-			printf(", ");
+		if (num % 2 == 0)
+			even_sum = even_sum + num;
 	}
-	printf("\n");
+	printf("%ld\n", even_sum);
 	return (0);
 }
