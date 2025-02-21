@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+#define MAX 1000000000
 /**
  * main - check the code
  *
@@ -7,20 +8,31 @@
  */
 int main(void)
 {
-	long double tmp = 0;
-	long double num = 2;
-	long double prev_num = 1;
+	unsigned long a_low = 1, a_high = 0;
+	unsigned long b_low = 2, b_high = 0;
+	unsigned long next_low, next_high;
 	int counter = 3;
 
-	printf("%.0Lf, %.0Lf, ", prev_num, num);
+	printf("%lu, %lu, ", a_low, b_low);
 	while (counter <= 98)
 	{
-		tmp = num;
-		num = num + prev_num;
-		prev_num = tmp;
-		printf("%.0Lf", num);
-		if (counter != 98)
-			printf(", ");
+		next_low = a_low + b_low;
+		next_high = a_high + b_high;
+		if (next_low >= MAX)
+		{
+			next_low = next_low - MAX;
+			next_high = next_high + 1;
+		}
+
+		if (next_high == 0)
+			printf(", %lu ", next_low);
+		else
+			printf(", %lu%09lu", next_high, next_low);
+
+		a_low = b_low;
+		a_high = b_high;
+		b_low = next_low;
+		b_high = next_high;
 		counter++;
 	}
 	printf("\n");
