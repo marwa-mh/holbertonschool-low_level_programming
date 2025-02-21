@@ -25,7 +25,7 @@ int main(void)
 		}
 
 		if (next_high == 0)
-			printf(", %lu ", next_low);
+			printf(", %lu", next_low);
 		else
 			printf(", %lu%09lu", next_high, next_low);
 
