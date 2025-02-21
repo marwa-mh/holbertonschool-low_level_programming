@@ -13,7 +13,7 @@ int main(void)
 	unsigned long next_low, next_high;
 	int counter = 3;
 
-	printf("%lu, %lu, ", a_low, b_low);
+	printf("%lu, %lu", a_low, b_low);
 	while (counter <= 98)
 	{
 		next_low = a_low + b_low;
