@@ -1,15 +1,8 @@
-#include<stdio.h>
+#include <stdio.h>
 
-/**
- * main - Entry point
- *
- * Description: Uses puts to print a text
- * Return: 0 for success
- */
 int main(void)
 {
 	int i, j;
-
 	for (i = 0; i <= 98; i++)
 	{
 		for (j = i + 1; j <= 99; j++)
@@ -27,5 +20,6 @@ int main(void)
 		}
 	}
 	putchar('\n');
-	return (0);
+	return 0;
 }
+
