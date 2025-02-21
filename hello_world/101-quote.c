@@ -3,8 +3,8 @@
 /**
  * main - Entry point
  *
- * Description: Uses puts to print a text
- * Return: 0 for success
+ * Description: Uses write to print a text
+ * Return: 1 for success
  */
 int main(void)
 {
