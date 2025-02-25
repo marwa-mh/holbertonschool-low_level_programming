@@ -9,29 +9,43 @@
 int _atoi(char *s)
 {
 	char *p_start, *p_end;
-	bool num_found = false;
+	int num_found = 0;
 	int result = 0;
+	int minus_count = 0;
+	int place_value = 1;
+
+
 	while (*s != '\0')
 	{
+		while (*s == 45 || *s == 43)
+		{
+			if (*s == 45)
+				minus_count++;
+			s++;
+		}
 		if (*s >= 48 && *s <= 57)
 		{
-			*p_start = s;
+			p_start = s;
 			s++;
 			while (*s >= 48 && *s <= 57)
 				s++;
-			*p_end = s;
-			num_found = true;
+			p_end = s;
+			num_found = 1;
 			break;
 		}
 		s++;
 	}
-	if (num_found)
+	if (num_found == 1)
 	{
-		while (p_start != p_end)
+		p_end--;
+		while (p_start <= p_end)
 		{
-			result = result + (*p_end);
+			result = result + (*p_end - '0') * place_value;
 			p_end--;
+			place_value = place_value * 10;
 		}
+		if (minus_count % 2 != 0)
+			result = result * -1;
 	}
 	return (result);
 }
