@@ -41,12 +41,12 @@ int _atoi(char *s)
 		p_end--;
 		while (p_start <= p_end)
 		{
-			if (result > INT_MAX - (*p_end - '0'))
+			if (result > INT_MAX - (*p_end - '0') * place_value)
 			{
 				if (minus_count % 2 == 0)
-					return INT_MAX;
+					return (INT_MAX);
 				else
-					return INT_MIN;
+					return (INT_MIN);
 			}
 			result = result + (*p_end - '0') * place_value;
 			p_end--;
