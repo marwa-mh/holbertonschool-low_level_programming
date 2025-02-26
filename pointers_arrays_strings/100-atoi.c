@@ -50,7 +50,7 @@ int _atoi(char *s)
 			}
 			result = result + (*p_end - '0') * place_value;
 			p_end--;
-			if (place_value * 10 >= INT_MAX)
+			if (place_value >= INT_MAX - place_value * 10)
 				return (INT_MAX);
 			place_value = place_value * 10;
 		}
