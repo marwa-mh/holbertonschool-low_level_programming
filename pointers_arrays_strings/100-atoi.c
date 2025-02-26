@@ -10,11 +10,7 @@
 int _atoi(char *s)
 {
 	char *p_start, *p_end;
-	int num_found = 0;
-	int result = 0;
-	int minus_count = 0;
-	int place_value = 1;
-
+	int num_found = 0, result = 0, minus_count = 0, place_value = 1;
 
 	while (*s != '\0')
 	{
@@ -42,12 +38,7 @@ int _atoi(char *s)
 		while (p_start <= p_end)
 		{
 			if (result > INT_MAX - (*p_end - '0') * place_value)
-			{
-				if (minus_count % 2 == 0)
-					return (INT_MAX);
-				else
-					return (INT_MIN);
-			}
+				return ((minus_count % 2 == 0) ? INT_MAX : INT_MIN);
 			result = result + (*p_end - '0') * place_value;
 			p_end--;
 			if (place_value > INT_MAX / 10)
