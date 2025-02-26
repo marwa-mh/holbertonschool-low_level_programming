@@ -41,7 +41,7 @@ int _atoi(char *s)
 		p_end--;
 		while (p_start <= p_end)
 		{
-			if (result > INT_MAX - (*p_end - '0'))
+			if (result > INT_MAX - (*p_end - '0') * place_value)
 			{
 				if (minus_count % 2 == 0)
 					return (INT_MAX);
@@ -50,6 +50,8 @@ int _atoi(char *s)
 			}
 			result = result + (*p_end - '0') * place_value;
 			p_end--;
+			if (place_value * 10 >= INT_MAX)
+				return (INT_MAX);
 			place_value = place_value * 10;
 		}
 		if (minus_count % 2 != 0)
