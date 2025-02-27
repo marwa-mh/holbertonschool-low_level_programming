@@ -14,10 +14,11 @@ char *cap_string(char *str)
 
 	while (*str != '\0')
 	{
-		if ((*str >='a' && *str <= 'z') || (*str >= 'A' && *str <='Z'))
+		if ((*str >= 'A' && *str <= 'Z') || (*str >= '0' && *str <= '9'))
+			should_capitalize = 0;
+		else if ((*str >='a' && *str <= 'z') && should_capitalize == 1)
 		{
-			if (should_capitalize == 1 && *str >= 'a' && *str <= 'z')
-				*str = *str - 32;
+			*str = *str - 32;
 			should_capitalize = 0;
 		}
 		else
