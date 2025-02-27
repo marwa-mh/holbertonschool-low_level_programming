@@ -8,7 +8,7 @@
 char *cap_string(char *str)
 {
 	char *ptr = str;
-	int should_capitalize = 0;
+	int should_capitalize = 1;
 
 	while (*str != '\0')
 	{
