@@ -1,5 +1,5 @@
 #include "main.h"
-
+#include <stddef.h>
 /**
  *_strstr - locate a substring
  * @haystack: string
@@ -20,7 +20,7 @@ char *_strstr(char *haystack, char *needle)
 			{
 				if (target_found == 0)
 				{
-					target = *haystack;
+					target = haystack;
 					target_found = 1;
 				}
 				p_needle++;
