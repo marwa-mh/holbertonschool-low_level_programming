@@ -7,12 +7,10 @@ int helper(int n, int d);
  */
 int _sqrt_recursion(int n)
 {
-	int numbers[] = {2, 3, 7, 8};
-	int i = 0;
+	int ld = n % 10;
 
-	for (i = 0; i < 4; i++)
-		if (n % 10 == numbers[i])
-			return (-1);
+	if (ld == 2 || ld == 3 || ld == 7 || ld == 8)
+		return (-1);
 	return  (helper(n, 1));
 }
 int helper(int n, int d)
