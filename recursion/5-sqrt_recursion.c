@@ -13,6 +13,12 @@ int _sqrt_recursion(int n)
 		return (-1);
 	return  (helper(n, 1));
 }
+/**
+ * helper - Finding Square Roots by Repeated Subtraction Method
+ *  @n: int
+ *  @d: int 
+ *  Return: int
+ */
 int helper(int n, int d)
 {
 	if (n < 0)
