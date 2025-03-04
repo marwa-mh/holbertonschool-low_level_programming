@@ -16,7 +16,7 @@ int _sqrt_recursion(int n)
 /**
  * helper - Finding Square Roots by Repeated Subtraction Method
  *  @n: int
- *  @d: int 
+ *  @d: int
  *  Return: int
  */
 int helper(int n, int d)
