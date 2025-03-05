@@ -20,9 +20,7 @@ int main(int argc, char *argv[])
 		return (1);
 	}
 	number = atoi(argv[1]);
-	if (number <= 0)
-		printf("0\n");
-	while (number != 0)
+	while (number > 0)
 	{
 		for (i = 0; i < 5; i++)
 			if (number - change[i] >= 0)
