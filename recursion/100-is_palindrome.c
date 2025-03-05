@@ -23,7 +23,7 @@ int is_palindrome2(char *s, char *e)
 		return (1);
 	if (*s != *e)
 		return (0);
-	return is_palindrome2(++s, --e);
+	return (is_palindrome2(++s, --e));
 }
 /**
  * is_palindrome - check
