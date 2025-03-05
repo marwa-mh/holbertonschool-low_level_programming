@@ -19,16 +19,11 @@ int main(int argc, char *argv[])
 	}
 	while (count < argc)
 	{
-		if (isdigit(*argv[count]) == 0)
+		if (!isdigit(*argv[count]))
 		{
 			printf("Error\n");
 			return (1);
 		}
-	/*	if (*argv[count] != '0' && isdigit(argv[count]) == 0)
-		{
-			printf("Error\n");
-			return (1);
-		}*/
 		result += atoi(argv[count]);
 		count++;
 	}
