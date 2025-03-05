@@ -1,6 +1,24 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
+
+/**
+ * is_number - validate if n is number or not
+ *@n: number
+ *Return: int
+ */
+int is_number(char *n)
+{
+	if (*n == '-')
+		n++;
+	while (*n != '\0')
+	{
+		if (!isdigit(*n))
+			return (0);
+		n++;
+	}
+	return (1);
+}
 /**
  * main - check the code
  *@argc: count of argument
@@ -19,7 +37,7 @@ int main(int argc, char *argv[])
 	}
 	while (count < argc)
 	{
-		if (!isdigit(*argv[count]))
+		if (is_number(argv[count]) == 0)
 		{
 			printf("Error\n");
 			return (1);
