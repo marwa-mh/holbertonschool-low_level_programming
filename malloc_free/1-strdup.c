@@ -13,6 +13,8 @@ char *_strdup(char *str)
 	unsigned int i = 0;
 	unsigned int size = 0;
 
+	if (str == NULL)
+		return (NULL);
 	while (*p != '\0')
 	{
 		size++;
