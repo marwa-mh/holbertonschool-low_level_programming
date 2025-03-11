@@ -1,0 +1,33 @@
+#include "main.h"
+#include <stdlib.h>
+/**
+ * *alloc_grid - return 2D array
+ * @width: row size
+ * @height: column size
+ * Return: a pointer to 2D array
+ */
+int **alloc_grid(int width, int height)
+{
+	int **array;
+	int w;
+	int h;
+
+	array = malloc(sizeof(int) * width);
+	if (array == NULL)
+		return (NULL);
+	h = 0;
+	while (h < height)
+	{
+		array[h] = malloc(sizeof(int) * height);
+		if (array[h] == NULL)
+			return (NULL);
+		w = 0;
+		while (w < width)
+		{
+			array[h][w] = 0;
+			w++;
+		}
+		h++;
+	}
+	return (array);
+}
