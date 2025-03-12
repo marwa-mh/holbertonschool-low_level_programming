@@ -5,17 +5,13 @@
  * string_nconcat - concatenates two strings
  * @s1: string
  * @s2: string
- * n: number of character from s2
+ * @n: number of character from s2
  * Return: char
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	char *str;
-	char *p_s1;
-	char *p_s2;
-	unsigned int len_s1 = 0;
-	unsigned int len_s2 = 0;
-	unsigned int counter = 0;
+	char *str, *p_s1, *p_s2;
+	unsigned int len_s1 = 0, len_s2 = 0, counter = 0;
 
 	if (s1 == NULL)
 		s1 = "";
