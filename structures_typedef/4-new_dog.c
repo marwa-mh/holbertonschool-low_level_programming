@@ -48,5 +48,10 @@ dog_t *new_dog(char *name, float age, char *owner)
 	dog->name = cpstr(name);
 	dog->age = age;
 	dog->owner = cpstr(owner);
+	if (dog->owner == NULL || dog->name == NULL)
+	{
+		free(dog);
+		return (NULL);
+	}
 	return (dog);
 }
