@@ -11,6 +11,8 @@ char *cpstr(char *str)
 	char *newstr;
 	int size = 0, i = 0;
 
+	if (str == NULL)
+		return (NULL);
 	while (*str != '\0')
 	{
 		size++;
@@ -20,7 +22,6 @@ char *cpstr(char *str)
 	newstr = malloc(sizeof(char) * size);
 	if (newstr == NULL)
 	{
-		free(newstr);
 		return (NULL);
 	}
 	str = p_str;
@@ -50,6 +51,8 @@ dog_t *new_dog(char *name, float age, char *owner)
 	dog->owner = cpstr(owner);
 	if (dog->owner == NULL || dog->name == NULL)
 	{
+		free(dog->name);
+		free(dog->owner);
 		free(dog);
 		return (NULL);
 	}
