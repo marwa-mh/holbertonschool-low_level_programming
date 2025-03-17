@@ -9,11 +9,13 @@
 int int_index(int *array, int size, int (*cmp)(int))
 {
 	int (*fp)(int);
-	int i = 0;
+	int i = -1;
 
+	if (size < 0)
+		return (-1);
 	fp = cmp;
 	for (i = 0; i < size; i++)
-		if (fp(array[i] != 0))
+		if (fp(array[i]) != 0)
 			return (i);
-	return (i);
+	return (-1);
 }
