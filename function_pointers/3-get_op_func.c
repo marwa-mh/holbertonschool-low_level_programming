@@ -28,6 +28,6 @@ int (*get_op_func(char *s))(int x, int y)
 		i++;
 	}
 	printf("Error\n");
-	exit(100);
+	exit(99);
 	return (NULL);
 }
