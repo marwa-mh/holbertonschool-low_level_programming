@@ -5,11 +5,9 @@
 /**
  * get_op_func - get op func
  * @s: operator
- * @x: first number
- * @y: second number
- * @Return: int
+ * Return: int
  */
-int (*get_op_func(char *s))(int x, int y)
+int (*get_op_func(char *s))(int, int)
 {
 	op_t ops[] = {
 		{"+", op_add},
