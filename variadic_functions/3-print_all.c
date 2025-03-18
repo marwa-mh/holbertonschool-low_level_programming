@@ -1,13 +1,6 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include <string.h>
-int _strlen(const char* const s)
-{
-    int i = 0;
-    while (s[i] !='\0')
-        i++;
-    return (i);
-}
 typedef struct format_type{
     char abbreviation;
     void (*name)(va_list args);
@@ -40,7 +33,7 @@ void print_all(const char * const format, ...)
    
     int i=0,j=0;
     char type;
-   int n = _strlen(format) ;
+   int n = strlen(format) ;
      
      va_start(args,format);
      while (i< n)
