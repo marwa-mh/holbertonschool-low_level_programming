@@ -19,10 +19,12 @@ int main(int argc, char *argv[])
         return 2;
     }
     unsigned char *ptr = (unsigned char *)main;
-    for ( i = 0; i < num_bytes; i++)
-    {
-        printf("%02x ", ptr[i]);
-    }
+    for (i = 0; i < num_bytes; i++)
+        {
+                printf("%02x", ptr[i]);
+                if (i < num_bytes - 1)
+                        printf(" ");
+        }
     printf("\n");
     return 0;
 }
