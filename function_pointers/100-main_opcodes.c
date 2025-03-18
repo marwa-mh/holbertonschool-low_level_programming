@@ -13,12 +13,12 @@ int main(int argc, char *argv[])
 	int i = 0;
 	unsigned char *ptr = (unsigned char *)main;
 
-	if (num_bytes < 1)
+	if (argc < 1)
 	{
 		printf("Error\n");
 		exit(1);
 	}
-	if(num_bytes < 0)
+	if (num_bytes < 0)
 	{
 		printf("Error\n");
 		exit(2);
