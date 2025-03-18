@@ -1,0 +1,72 @@
+#include <stdio.h>
+#include <stdarg.h>
+#include <string.h>
+int _strlen(const char* const s)
+{
+    int i = 0;
+    while (s[i] !='\0')
+        i++;
+    return (i);
+}
+typedef struct format_type{
+    char abbreviation;
+    void (*name)(va_list args);
+} format_type_t;
+void print_char(va_list args)
+{
+    printf("%c",va_arg(args,int) );
+}
+void print_string(va_list args)
+{
+    printf("%s",va_arg(args,char*) );
+}
+void print_int(va_list args)
+{
+    printf("%d",va_arg(args,int));
+}
+void print_float(va_list args)
+{
+    printf("%f",va_arg(args,double));
+}
+void print_all(const char * const format, ...)
+{
+     va_list args;
+    format_type_t ft[] = {
+        {'c',print_char},
+        {'i', print_int},
+        {'f', print_float},
+        {'s',print_string}
+    };
+   
+    int i=0,j=0;
+    char type;
+   int n = _strlen(format) ;
+     
+     va_start(args,format);
+     while (i< n)
+     {
+          type = format[i];
+         while ( j < 4)
+         {
+             
+             if (ft[j].abbreviation == type)
+             {
+            
+                 ft[j].name(args);
+
+                break;
+             }
+             j++;
+         }
+         
+         i++;
+         
+         if (i < n && j !=4)
+            printf(", ");
+        j=0;
+     }
+     printf("\n");
+     va_end(args);
+     
+    
+}
