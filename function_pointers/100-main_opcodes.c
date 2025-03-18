@@ -18,6 +18,10 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(1);
 	}
+	if(num_bytes < 0)
+	{
+		printf("Error\n");
+		exit(2);
 	for (i = 0; i < num_bytes; i++)
 	{
 		printf("%02x", ptr[i]);
