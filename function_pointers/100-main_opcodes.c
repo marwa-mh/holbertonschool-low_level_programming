@@ -9,22 +9,21 @@
  */
 int main(int argc, char *argv[])
 {
-    int num_bytes = atoi(argv[argc - 1]);
-    int i=0;
-    //printf("%d\n",argc);
-    
-    if (num_bytes < 0)
-    {
-        printf("Error\n");
-        return 2;
-    }
-    unsigned char *ptr = (unsigned char *)main;
-    for (i = 0; i < num_bytes; i++)
-        {
-                printf("%02x", ptr[i]);
-                if (i < num_bytes - 1)
-                        printf(" ");
-        }
-    printf("\n");
-    return 0;
+	int num_bytes = atoi(argv[argc - 1]);
+	int i = 0;
+	unsigned char *ptr = (unsigned char *)main;
+
+	if (num_bytes < 1)
+	{
+		printf("Error\n");
+		exit(1);
+	}
+	for (i = 0; i < num_bytes; i++)
+	{
+		printf("%02x", ptr[i]);
+		if (i < num_bytes - 1)
+			printf(" ");
+	}
+	printf("\n");
+	return (0);
 }
