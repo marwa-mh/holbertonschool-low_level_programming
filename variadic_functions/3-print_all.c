@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include <string.h>
-
+#include <stdint.h>
 typedef struct format_type{
     char abbreviation;
     void (*name)(va_list args);
@@ -12,7 +12,8 @@ void print_char(va_list args)
 }
 void print_string(va_list args)
 {
-    printf("%s",va_arg(args,char*) );
+char *str = va_arg(args, char*);
+    printf("%s", str + !str * (intptr_t)"(nil)" - !str *(intptr_t)str);
 }
 void print_int(va_list args)
 {
