@@ -51,7 +51,7 @@ void print_all(const char * const format, ...)
 	va_list args;
 	int i = 0, j = 0;
 	char type;
-
+	char *sep = "";
 	format_type_t ft[] = {
 	{'c', print_char},
 	{'i', print_int},
@@ -67,14 +67,14 @@ void print_all(const char * const format, ...)
 		{
 			if (ft[j].abbreviation == type)
 			{
+				printf("%s", sep);
 				ft[j].name(args);
+				sep = ", ";
 				break;
 			}
 			j++;
 		}
 		i++;
-	if (format[i] != '\0' && j != 4)
-		printf(", ");
 	j = 0;
 	}
 	printf("\n");
