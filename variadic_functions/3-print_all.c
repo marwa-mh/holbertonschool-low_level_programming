@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include <string.h>
+
 typedef struct format_type{
     char abbreviation;
     void (*name)(va_list args);
@@ -32,11 +33,12 @@ void print_all(const char * const format, ...)
     };
    
     int i=0,j=0;
+    
     char type;
-   int n = strlen(format) ;
+ 
      
      va_start(args,format);
-     while (i< n)
+     while (format[i]!='\0')
      {
           type = format[i];
          while ( j < 4)
@@ -54,10 +56,11 @@ void print_all(const char * const format, ...)
          
          i++;
          
-         if (i < n && j !=4)
+         if (format[i]!='\0' && j !=4)
             printf(", ");
         j=0;
      }
+
      printf("\n");
      va_end(args);
      
