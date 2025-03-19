@@ -2,7 +2,7 @@
 #include <stdarg.h>
 #include <string.h>
 #include <stdint.h>
-
+#include "variadic_functions.h"
 /**
  * print_char - print character
  * @args: character
