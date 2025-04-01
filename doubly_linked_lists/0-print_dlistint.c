@@ -1,3 +1,6 @@
+#include <stddef.h>
+#include <stdio.h>
+#include "lists.h"
 /**
  * print_dlistint - print doubly linked list
  * @prev: points to the previous node
