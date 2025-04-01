@@ -1,0 +1,28 @@
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
+#include "lists.h"
+int _strlen(const char *str)
+{
+    int len= 0;
+    
+    while(*str !='\0')
+    {
+    len++;
+    str++;
+    }
+    return len;
+}
+list_t *add_node(list_t **head, const char *str)
+{
+    list_t* new_node =(list_t *)malloc(sizeof(list_t));
+  if(!new_node)
+  return (NULL);
+   new_node->str =strdup(str);
+   new_node->len=strlen(str);
+   new_node->next = *head;
+   *head =new_node;
+
+    return new_node;
+
+}
