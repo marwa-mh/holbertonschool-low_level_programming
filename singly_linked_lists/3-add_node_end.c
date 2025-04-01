@@ -2,6 +2,7 @@
 #include <string.h>
 #include <stdio.h>
 #include "lists.h"
+#include "funcs.c"
 /**
  * add_node_end - add node to list at the end
  * @head: the header of the list
