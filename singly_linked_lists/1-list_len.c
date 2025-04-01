@@ -4,7 +4,7 @@
 /**
  * list_len - print a list of singly linked list
  * @h: input
- * Return : int
+ * Return: int
  */
 size_t list_len(const list_t *h)
 {

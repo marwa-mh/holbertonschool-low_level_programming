@@ -4,12 +4,13 @@
 /**
  * print_list - print a list of singly linked list
  * @h: input
- * Return : int
+ * Return: int
  */
 size_t print_list(const list_t *h)
 {
 
 	int count = 0;
+
 	while (h != NULL)
 	{
 
