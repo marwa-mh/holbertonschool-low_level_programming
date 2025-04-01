@@ -3,7 +3,7 @@
 #include "lists.h"
 /**
  * print_dlistint - print doubly linked list
- *
+ * @h: points to the first node
  * Return: number of doubly linked list node
  *
  */
