@@ -6,7 +6,7 @@
  * @head: the header of the list
  * Return: void
  */
-void free_dlistint(dlistint_s *head)
+void free_dlistint(dlistint_t *head)
 {
 	while (head != NULL)
 	{
