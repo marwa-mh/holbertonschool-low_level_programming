@@ -21,12 +21,12 @@ int _pow(int x, int y)
 int _pow_index(int base, unsigned long int n)
 {
 	int pow_index = 0;
-	unsigned long int max_pow = _pow(base, pow_index);
+	unsigned long int max_pow = 1;
 
 	while (max_pow <= n / base)
 	{
 		pow_index++;
-		max_pow = _pow(2, pow_index);
+		max_pow *= base;
 	}
 	return pow_index;
 }
