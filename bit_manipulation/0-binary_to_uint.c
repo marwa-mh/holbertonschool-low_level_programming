@@ -1,6 +1,6 @@
-#include <math.h>
 #include <stdio.h>
 #include "main.h"
+#include "func.c"
 /**
  * binary_to_uint - convert from binary to unsigned int
  * @b: char
@@ -22,12 +22,12 @@ unsigned int binary_to_uint(const char *b)
 		tmpValue = *b_end - 48;
 		if (tmpValue != 0 && tmpValue != 1)
 			return (0);
-		result += tmpValue * pow(2, index);
+		result += tmpValue * _pow(2, index);
 		index++;
 		b_end--;
 	}
 	tmpValue = *b_end - 48;
-	result += tmpValue * pow(2, index);
+	result += tmpValue * _pow(2, index);
 	return (result);
 }
 
