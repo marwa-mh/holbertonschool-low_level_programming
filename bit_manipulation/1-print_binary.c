@@ -3,7 +3,7 @@
 #include "func.c"
 /**
  * print_binary - convert to binary and print it
- * @b: char
+ * @n: number
  * Return: int
  */
 void print_binary(unsigned long int n)
