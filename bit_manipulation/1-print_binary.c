@@ -10,7 +10,7 @@ void print_binary(unsigned long int n)
 {
 	int start_print = 0;
 	int pow_index = _pow_index(2, n);
-	unsigned long int max_pow = _pow(2, pow_index);
+	unsigned long int max_pow = 1UL << pow_index;
 
 	while (pow_index >= 0)
 	{
@@ -26,6 +26,7 @@ void print_binary(unsigned long int n)
 		}
 		start_print = 1;
 		pow_index--;
-		max_pow = _pow(2, pow_index);
+		if (pow_index >= 0)
+			max_pow = 1UL <<  pow_index;
 	}
 }
