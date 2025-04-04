@@ -13,6 +13,8 @@ unsigned int binary_to_uint(const char *b)
 	int tmpValue = 0;
 	const char *b_end = b;
 
+	if (b == NULL)
+		return (0);
 	while (*b_end != '\0')
 		b_end++;
 	b_end--;
