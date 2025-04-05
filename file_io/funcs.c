@@ -27,3 +27,13 @@ void print_error_int(int code, const char *message, int arg)
 	dprintf(STDERR_FILENO, message, arg);
 	exit(code);
 }
+/**
+ * print_error_simple - Prints a simple error message with no format args
+ * @code: Exit code
+ * @message: Error message
+ */
+void print_error_simple(int code, const char *message)
+{
+	dprintf(STDERR_FILENO, "%s", message);
+	exit(code);
+}

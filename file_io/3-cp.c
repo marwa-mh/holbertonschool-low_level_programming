@@ -16,16 +16,15 @@ int main(int argc, char **argv)
 	char buffer[1024];
 
 	if (argc != 3)
-		print_error(97, "Usage: cp file_from file_to\n","");
+		print_error_simple(97, "Usage: cp file_from file_to\n");
 	fd_from = open(argv[1], O_RDONLY);
 	if (fd_from == -1)
 		print_error(98, "Error: Can't read from file %s\n", argv[1]);
 	r = read(fd_from, buffer, 1024);
 	if (r == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		close(fd_from);
-		exit(98);
+		print_error(98, "Error: Can't read from file %s\n", argv[1]);
 	}
 	fd_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (fd_to == -1)
