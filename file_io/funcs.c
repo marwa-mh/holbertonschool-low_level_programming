@@ -13,6 +13,7 @@
 void print_error(int code, const char *message, const char *arg)
 {
 	dprintf(STDERR_FILENO, message, arg);
+	dprintf(STDERR_FILENO, "%d\n", code);
 	exit(code);
 }
 
