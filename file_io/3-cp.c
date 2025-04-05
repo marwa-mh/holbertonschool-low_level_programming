@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <fcntl.h>
 #include <unistd.h>
+#include "funcs.c"
 /**
  * main - copies the content of one file to another.
  * @argc: argument count.
@@ -14,10 +15,7 @@ int main(int argc, char **argv)
 	char buffer[1024];
 
 	if (argc != 3)
-	{
-		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
-		exit(97);
-	}
+		print_error(97, "Usage: cp file_from file_to\n","");
 	fd_from = open(argv[1], O_RDONLY);
 	if (fd_from == -1)
 	{
