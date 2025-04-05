@@ -29,7 +29,7 @@ int main(int ac, char **av)
 	if (fd_to == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
-		close(fd_form);
+		close(fd_from);
 		exit(99);
 	}
 	while (1)
