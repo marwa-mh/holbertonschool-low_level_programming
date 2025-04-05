@@ -12,6 +12,6 @@
  */
 void print_error(int code, const char *message, const char *arg)
 {
-	dprintf(STDERR_FILENO, message, args);
+	dprintf(STDERR_FILENO, message, arg);
 	exit(code);
 }
