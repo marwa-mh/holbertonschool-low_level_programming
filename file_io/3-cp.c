@@ -18,7 +18,7 @@ int main(int argc, char **argv)
 		print_error(97, "Usage: cp file_from file_to\n", "");
 	fd_from = open(argv[1], O_RDONLY);
 	if (fd_from == -1)
-		dprint_error(98, "Error: Can't read from file %s\n", argv[1]);
+		print_error(98, "Error: Can't read from file %s\n", argv[1]);
 	r = read(fd_from, buffer, 1024);
 	if (r == -1)
 	{
@@ -55,9 +55,9 @@ int main(int argc, char **argv)
 		close(fd_to);
 	}
 	if (close(fd_from) == -1)
-		print_error(100, "Error: Can't close fd %d\n", fd_from);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_from), exit(100);
 	if (close(fd_to) == -1)
-		print_error(100, "Error: Can't close fd %d\n", fd_to);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_to), exit(100);
 	return (0);
 }
 
