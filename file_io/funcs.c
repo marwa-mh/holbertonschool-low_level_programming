@@ -12,7 +12,7 @@
  */
 void print_error(int code, const char *message, const char *arg)
 {
-	dprintf(STDERR_FILENO, message, arg);
+	fprintf(stdout, message, arg);
 	exit(code);
 }
 /**
@@ -24,7 +24,7 @@ void print_error(int code, const char *message, const char *arg)
  */
 void print_error_int(int code, const char *message, int arg)
 {
-	dprintf(STDERR_FILENO, message, arg);
+	fprintf(stdout, message, arg);
 	exit(code);
 }
 /**
@@ -34,6 +34,6 @@ void print_error_int(int code, const char *message, int arg)
  */
 void print_error_simple(int code, const char *message)
 {
-	dprintf(STDERR_FILENO, "%s", message);
+	fprintf(stdout, "%s", message);
 	exit(code);
 }
