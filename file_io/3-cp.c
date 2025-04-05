@@ -37,7 +37,7 @@ int main(int ac, char **av)
 		w = write(fd_to, buffer, r);
 		if (w == -1 || w != r)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
 			close(fd_from);
 			close(fd_to);
 			exit(99);
@@ -45,7 +45,7 @@ int main(int ac, char **av)
 	}
 	if (r == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
 		close(fd_from);
 		close(fd_to);
 		exit(98);
@@ -62,4 +62,3 @@ int main(int ac, char **av)
 	}
 	return (0);
 }
-
