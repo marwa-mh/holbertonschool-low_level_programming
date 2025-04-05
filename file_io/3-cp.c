@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "main.h"
+#include "funcs.c"
 /**
  * main - copies the content of one file to another.
  * @argc: argument count.

@@ -31,7 +31,7 @@ void copy_file(const char *file_from, const char *file_to)
 	if (fd_from == -1)
 		print_error(98, "Error: Can't read from file %s\n", file_from);
 
-	r = read(fd_from, buffer, BUFFER_SIZE);
+	r = read(fd_from, buffer, 1024);
 	if (r == -1)
 	{
 		close(fd_from);
@@ -53,7 +53,7 @@ void copy_file(const char *file_from, const char *file_to)
 			close(fd_to);
 			print_error(99, "Error: Can't write to %s\n", file_to);
 		}
-		r = read(fd_from, buffer, BUFFER_SIZE);
+		r = read(fd_from, buffer, 1024);
 		if (r == -1)
 		{
 			close(fd_from);
