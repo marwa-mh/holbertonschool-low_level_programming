@@ -13,6 +13,17 @@
 void print_error(int code, const char *message, const char *arg)
 {
 	dprintf(STDERR_FILENO, message, arg);
-	dprintf(STDOUT_FILENO, "%d\n", code);
+	exit(code);
+}
+/**
+ * print_error_int - Prints an error message and exits with a code
+ * @code: Exit code
+ * @message: Error message format string
+ * @arg: Argument for the format int
+ * Return: Nothing
+ */
+void print_error_int(int code, const char *message, int arg)
+{
+	dprintf(STDERR_FILENO, message, arg);
 	exit(code);
 }
